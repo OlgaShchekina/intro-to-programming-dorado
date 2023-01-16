@@ -29,6 +29,26 @@
     <h1>Connect:</h1>
     <a href="https://github.com/OlgaShchekina">My Github</a>
 </section>
+<section>
+    <h2>Leave a Message:</h2>
+    <form name="leave_message" id="message_form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="message">Message:</label><br>
+        <textarea name="message" id="message" required></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<section id="messages" style="visibility: hidden; display: none">
+    <h2>Messages:</h2>
+    <ul></ul>
+</section>
 
 <footer></footer>
 
