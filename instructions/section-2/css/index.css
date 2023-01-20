@@ -1,0 +1,80 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 150px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #FAF8F9FF;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #0a66c2;
+    margin-left: 10px;
+}
+section {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2 {
+    font-size: 20px;
+    color: #160b3f;
+    font-weight: bold;
+}
+img {
+    border-radius: 50%;
+    height: auto;
+    width: 100px;
+}
+ #experience p {
+     margin: 10px;
+     display: flex;
+     padding: 0;
+     background-color: #F3F0F3FF;
+     border: 5px solid #F3F0F3FF;
+ }
+
+ #skills li {
+    border: 2px solid #DAD1D7FF;
+    color: black;
+     font-weight: 500;
+     margin-left: -30px;
+     margin-right: 35px;
+     display: inline-block;
+    padding: 4px;
+ }
+
+label {
+    color: rgb(99, 97, 107);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+#name, #email, #message {
+    padding: 4px;
+    border-width: 1px;
+    margin: 10px;
+}
+
+button {
+    border-radius: 10%;
+    background-color: #0a66c2;
+    color: white;
+    border: 1px solid #0a66c2;
+    padding: 3px;
+}
+
+footer {
+    background-color: #F3F0F3FF;
+    padding: 1px;
+    margin-top: 10px;
+}
