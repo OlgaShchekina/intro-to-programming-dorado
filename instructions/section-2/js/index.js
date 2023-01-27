@@ -26,31 +26,68 @@ messageForm.addEventListener('submit', event => {
   let messageList = messageSection.querySelector('ul');
 
   // hide Messages section if no message list
-  if (!messageList) {
-    messageSection.style.visibility = 'hidden';
-    messageSection.style.display = 'none';
-  } else {
-    messageSection.style.display = 'block';
-    messageSection.style.visibility = 'visible';
+  if (messageSection.style.display === 'none') {
+    messageSection.style.display = 'block'
   }
-  //create a list of messages
-  let newMessage = document.createElement('li');
-  newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> <span>wrote: ${message} </span>`;
+
+  //create new message
+  const newMessage = document.createElement('li')
+  newMessage.classList.add('list_item')
+  newMessage.innerHTML = `<div>
+        <span class="strong">${message}</span>
+        <p>${today.toLocaleString()} from <a class="link" href="mailto:${email}">${name}</a> &nbsp;</p>
+      </div>`
   //add messages to the list
   messageList.appendChild(newMessage);
+
+  // create edit button
+  const editButton = document.createElement('button')
+  editButton.innerText = 'edit'
+  editButton.type = 'button'
+  editButton.classList.add('button', 'button_edit')
+
+  editButton.addEventListener('click', (event) => {
+    const button = event.target
+    const entry = button.parentNode
+
+    if (button.innerText === 'edit') {
+      const message = entry.querySelector('span')
+      const input = document.createElement('input')
+      input.type = 'text'
+      input.value = message.innerText
+      input.classList.add('field_input')
+
+      message.after(input)
+      message.remove()
+
+      button.innerText = 'save'
+    } else {
+      const input = entry.querySelector('input')
+      const message = document.createElement('span')
+      message.innerText = input.value
+      message.classList.add('strong')
+
+      input.after(message)
+      input.remove()
+
+      button.innerText = 'edit'
+    }
+  })
+
+  newMessage.appendChild(editButton)
 
   //create remove button
   const removeButton = document.createElement('button')
   removeButton.innerText = 'remove';
   removeButton.type = 'button';
+  removeButton.classList.add('button', 'button_remove');
   removeButton.addEventListener('click', () => {
     let entry = removeButton.parentNode;
     entry.remove();
 
-    // remove the Message section after all messages removed
+    // hide the Message section after all messages removed
     if (messageList.children.length === 0) {
-      messageSection.style.visibility = 'hidden';
-      messageSection.style.display = 'none';
+      messageSection.style.display = 'none'
     }
   })
 
