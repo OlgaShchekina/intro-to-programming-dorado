@@ -4,12 +4,59 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin: 150px;
+    margin-left: 250px;
+    margin-right: 250px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    background-color: #FAF8F9FF;
+    background-color: #fffeff;
     color: black;
+    line-height: 1.5;
+}
+
+header {
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+.container {
+    padding: 1rem 0;
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 90vw;
+}
+
+.nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul[role='list'], ol[role='list'] {
+    list-style: none;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.main_nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu_item {
+    margin-right: 1rem;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
 }
 
 * {
@@ -18,8 +65,8 @@ body {
 
 a {
     color: #0a66c2;
-    margin-left: 10px;
 }
+
 section {
     padding: 0;
     margin: 0;
@@ -30,48 +77,131 @@ h1, h2 {
     color: #160b3f;
     font-weight: bold;
 }
+
 img {
+    overflow: clip;
     border-radius: 50%;
     height: auto;
-    width: 100px;
+    width: 60px;
 }
- #experience p {
-     margin: 10px;
-     display: flex;
-     padding: 0;
-     background-color: #F3F0F3FF;
-     border: 5px solid #F3F0F3FF;
- }
 
- #skills li {
+section {
+    display: block;
+}
+
+.card {
+    margin-bottom: 1rem;
+    border: 2px solid #F3F0F3FF;
+    background-color: #F3F0F3FF;
+    /*border-radius: var(--rounded);*/
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+}
+
+#skills li {
     border: 2px solid #DAD1D7FF;
     color: black;
-     font-weight: 500;
-     margin-left: -30px;
-     margin-right: 35px;
-     display: inline-block;
+    font-weight: 500;
+    margin-right: 10px;
+    display: inline-block;
     padding: 4px;
- }
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
 
 label {
+    cursor: default;
+}
+
+.field_label, .field_input {
+    display: block;
+}
+
+form {
+    display: block;
+    margin-top: 0;
+}
+
+.field {
+    display: block;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.field_inline {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+
+.field_label {
     color: rgb(99, 97, 107);
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
 
-#name, #email, #message {
-    padding: 4px;
-    border-width: 1px;
-    margin: 10px;
+@media screen and (min-width: 768px) {
+    .field {
+        width: 32rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .field_inline {
+        width: 15.35rem;
+    }
+}
+
+
+.field_input {
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+
+.list_item {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin-right: 1px;
 }
 
 button {
-    border-radius: 10%;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+button {
+    min-width: 100px;
     background-color: #0a66c2;
     color: white;
-    border: 1px solid #0a66c2;
+    border: none;
     padding: 3px;
 }
+
+.button_edit {
+    background-color: #aac3dc;
+    color: black;
+}
+
+.button_remove {
+    background-color: darkred;
+}
+
+.list_item :first-child {
+    flex-grow: 1;
+}
+
+.list_item :not(:last-child) {
+    margin-right: 1rem;
+}
+
+
 
 footer {
     background-color: #F3F0F3FF;

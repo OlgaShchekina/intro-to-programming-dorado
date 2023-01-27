@@ -8,49 +8,81 @@
 </head>
 
 <body>
-<section>
-    <h1>About</h1>
-    <p>Future Wed Developer with experience in manual and automated Web-based applications UI and API testing.
-        Well organized, passionate about learning new concepts, tools and technologies.</p>
-    <img src="images/my_photo.jpeg" alt="my photo">
-</section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <ul></ul>
-</section>
+<header>
+    <div class="container">
+        <nav class="nav">
+            <ul class="menu" role="list">
+                <li class="menu_item">
+                    <img class="image image_small image_rounded" src="images/my_photo.jpeg" alt="my photo">
+                </li>
+                <li>
+                    <h1 class="logo-name">
+                        Olga Shchekina
+                    </h1>
+                </li>
+            </ul>
+            <ul class="menu main_nav" role="list">
+                <li class="menu_item"><a href="#about">About</a></li>
+                <li class="menu_item"><a href="#skills">Skills</a></li>
+                <li class="menu_item"><a href="#connect">Connect</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <section id="about">
+        <h1>About</h1>
+        <p>Future Wed Developer with experience in manual and automated Web-based applications UI and API testing.
+            Well organized, passionate about learning new concepts, tools and technologies.</p>
+    </section>
 
-<section id="experience">
-    <h1>Experience</h1>
-    <p>SDET at Extend</p>
-    <p>QA automation engineer at Chess.com</p>
-</section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul role="list"></ul>
+    </section>
 
-<section>
-    <h1>Connect</h1>
-    <a href="https://github.com/OlgaShchekina">My Github</a>
-</section>
-<section>
-    <h2>Leave a Message</h2>
-    <form name="leave_message" id="message_form">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
+    <section id="experience">
+        <h1>Experience</h1>
+        <ul role="list">
+            <li class="card">
+                <span>SDET at Some.com</span>
+            </li>
+            <li class="card">
+                <span>QA automation engineer at Great.com</span>
+            </li>
+        </ul>
+    </section>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
+    <section id="connect">
+        <h1>Connect</h1>
+        <a href="https://github.com/OlgaShchekina">My Github</a>
+    </section>
+    <section id="message_form">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            <div class="field field_inline">
+                <label class="field_label" for="name">Name:</label>
+                <input class="field_input" id="name" type="text" name="name" required>
+            </div>
+            <div class="field field_inline">
+                <label class="field_label" for="email">Email:</label>
+                <input class="field_input" id="email" type="email" name="email" required>
+            </div>
+            <div class="field">
+                <label class="field_label" for="message">Message:</label>
+                <textarea class="field_input" id="message" name="message" required></textarea>
+            </div>
 
-        <label for="message">Message:</label><br>
-        <textarea name="message" id="message" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 
-        <button type="submit">Submit</button>
-    </form>
-</section>
-
-<section id="messages" style="visibility: hidden; display: none">
-    <h2>Messages</h2>
-    <ul></ul>
-</section>
-
+    <section id="messages" style="display: none">
+        <h2>Messages</h2>
+        <ul class="list" role="list"></ul>
+    </section>
+</main>
 <footer></footer>
 
 <script src="js/index.js"></script>
