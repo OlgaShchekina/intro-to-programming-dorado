@@ -95,3 +95,25 @@ messageForm.addEventListener('submit', event => {
   messageList.appendChild(newMessage);
   event.target.reset();
 });
+
+const githubRequest = new XMLHttpRequest()
+githubRequest.open("GET", "https://api.github.com/users/OlgaShchekina/repos", true);
+
+githubRequest.addEventListener('load', function () {
+  const data = JSON.parse(this.response)
+
+  // filter out irrelevant repositories
+  const filteredData = data.filter((repo) =>
+    repo.name.includes('intro-to-programming')
+  )
+
+  const projectSection = document.querySelector('#projects')
+  const projectList = projectSection.querySelector('ul')
+
+  for (let repository of filteredData) {
+    const project = document.createElement('li')
+    project.innerHTML = `<a class="link projects_links" href="${repository.html_url}">${repository.name}</a>`
+    projectList.appendChild(project)
+  }
+})
+githubRequest.send();
