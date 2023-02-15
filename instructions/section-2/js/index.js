@@ -1,9 +1,7 @@
 const today = new Date();
 const thisYear = today.getFullYear();
-const footer = document.querySelector('footer');
-const copyright = document.createElement('p');
-copyright.innerHTML = `Olga ${thisYear}`;
-footer.appendChild(copyright);
+const copyright = document.querySelector('#copyright');
+copyright.innerHTML = `@Olga Shchekina ${thisYear}`;
 const skills = ["JavaScript", "TypeScript", "HTML", "CCS", "QA"];
 const skillsSection = document.getElementById('skills');
 const skillsList = skillsSection.querySelector("ul");
@@ -35,7 +33,7 @@ messageForm.addEventListener('submit', event => {
   newMessage.classList.add('list_item')
   newMessage.innerHTML = `<div>
         <span class="strong">${message}</span>
-        <p>${today.toLocaleString()} from <a class="link" href="mailto:${email}">${name}</a> &nbsp;</p>
+        <p>${today.toLocaleString()} from <a class="link" target="_blank" href="mailto:${email}">${name}</a> &nbsp;</p>
       </div>`
   //add messages to the list
   messageList.appendChild(newMessage);
@@ -96,20 +94,20 @@ messageForm.addEventListener('submit', event => {
   event.target.reset();
 });
 
-  fetch('https://api.github.com/users/OlgaShchekina/repos')
-    .then((res) => res.json())
-    .then((data) => {
-      // filter out irrelevant repositories
-      const filteredData = data.filter((repo) =>
-        repo.name.includes('intro-to-programming')
-      )
+fetch('https://api.github.com/users/OlgaShchekina/repos')
+  .then((res) => res.json())
+  .then((data) => {
+    // filter out irrelevant repositories
+    const filteredData = data.filter((repo) =>
+      repo.name.includes('intro-to-programming')
+    )
 
-      const projectSection = document.querySelector('#projects')
-      const projectList = projectSection.querySelector('ul')
+    const projectSection = document.querySelector('#projects')
+    const projectList = projectSection.querySelector('ul')
 
-      for (let repository of filteredData) {
-        const project = document.createElement('li')
-        project.innerHTML = `<a class="link projects_links" href="${repository.html_url}">${repository.name}</a>`
-        projectList.appendChild(project)
-      }
-    })
+    for (let repository of filteredData) {
+      const project = document.createElement('li')
+      project.innerHTML = `<a class="link projects_links" href="${repository.html_url}">${repository.name}</a>`
+      projectList.appendChild(project)
+    }
+  })

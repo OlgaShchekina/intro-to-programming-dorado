@@ -3,19 +3,27 @@
 body {
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin-left: 250px;
-    margin-right: 250px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     background-color: #fffeff;
     color: black;
-    line-height: 1.5;
 }
 
-header {
-    display: block;
+main {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #F3F0F3FF;
+    padding: 1px;
+    margin-top: 10px;
+}
+
+h1, h2 {
+    font-size: 20px;
+    color: #160b3f;
+    font-weight: bold;
 }
 
 div {
@@ -72,11 +80,6 @@ section {
     margin: 0;
 }
 
-h1, h2 {
-    font-size: 20px;
-    color: #160b3f;
-    font-weight: bold;
-}
 
 img {
     overflow: clip;
@@ -106,6 +109,10 @@ section {
     margin-right: 10px;
     display: inline-block;
     padding: 4px;
+}
+.dates {
+    font-style: italic;
+    color: rgb(99, 97, 107);
 }
 
 input, button, textarea, select {
@@ -144,19 +151,6 @@ form {
     margin-bottom: 0.25rem;
 }
 
-@media screen and (min-width: 768px) {
-    .field {
-        width: 32rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .field_inline {
-        width: 15.35rem;
-    }
-}
-
-
 .field_input {
     padding: 0.25rem 0.5rem;
     width: 100%;
@@ -171,22 +165,11 @@ form {
 }
 
 button {
-    border: none;
-    box-shadow: none;
-    cursor: pointer;
-}
-
-button {
     min-width: 100px;
     background-color: #0a66c2;
     color: white;
     border: none;
     padding: 3px;
-}
-
-.button_edit {
-    background-color: #aac3dc;
-    color: black;
 }
 
 .button_remove {
@@ -201,8 +184,19 @@ button {
     margin-right: 1rem;
 }
 
-footer {
-    background-color: #F3F0F3FF;
-    padding: 1px;
-    margin-top: 10px;
+
+
+@media screen and (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .field {
+        width: 32rem;
+    }
+
+    .field_inline {
+        width: 15.35rem;
+    }
 }

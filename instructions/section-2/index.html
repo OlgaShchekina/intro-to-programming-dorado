@@ -17,7 +17,7 @@
                     <img class="image image_small image_rounded" src="images/my_photo.jpeg" alt="my photo">
                 </li>
                 <li>
-                    <h1 class="logo-name">
+                    <h1 class="logo_name">
                         Olga Shchekina
                     </h1>
                 </li>
@@ -31,6 +31,7 @@
     </div>
 </header>
 <main>
+    <div class="container">
     <section id="about">
         <h1>About</h1>
         <p>Future Wed Developer with experience in manual and automated Web-based applications UI and API testing.
@@ -48,20 +49,22 @@
     </section>
 
     <section id="experience">
-        <h1>Experience</h1>
+        <h2>Experience</h2>
         <ul role="list">
             <li class="card">
-                <span>SDET at Some.com</span>
+                <span>SDET at Extend.com</span>
+                <span class="dates">Now 2021 - Present</span>
             </li>
             <li class="card">
-                <span>QA automation engineer at Great.com</span>
+                <span>QA automation engineer at Chess.com</span>
+                <span class="dates">Jun 2020 - Now 2021</span>
             </li>
         </ul>
     </section>
 
     <section id="connect">
-        <h1>Connect</h1>
-        <a href="https://github.com/OlgaShchekina">My Github</a>
+        <h2>Connect</h2>
+        <a class="link" href="https://github.com/OlgaShchekina">My Github</a>
     </section>
     <section id="message_form">
         <h2>Leave a Message</h2>
@@ -87,9 +90,44 @@
         <h2>Messages</h2>
         <ul class="list" role="list"></ul>
     </section>
+    </div>
 </main>
-<footer></footer>
+<footer id="footer">
+    <div class="container">
+        <nav class="nav">
+            <p id="copyright">
+                <!-- HTML will be inserted here via JS -->
+            </p>
 
+            <ul class="menu" role="list">
+                <li class="menu_item">
+                    <a
+                            class="link link_no_color"
+                            href="https://www.linkedin.com/in/olga-s-5a943933/"
+                            target="_blank"
+                            title="LinkedIn"
+                    >
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a
+                            class="link link_no_color"
+                            href="https://github.com/OlgaShchekina"
+                            target="_blank"
+                            title="GitHub"
+                    >
+                        <i data-feather="github"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace()
+</script>
 <script src="js/index.js"></script>
 </body>
 
